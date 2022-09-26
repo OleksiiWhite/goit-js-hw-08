@@ -22,6 +22,9 @@ formRef.addEventListener('input', throttledOnFormInput);
 
 function initPage() {
   const saveData = load(LOCALE_STORAGE_KEY);
+  //   if (value === null) {
+  //     alert('no');
+  //   }
 
   if (!saveData) {
     return;
