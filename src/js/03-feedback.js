@@ -22,9 +22,6 @@ formRef.addEventListener('input', throttledOnFormInput);
 
 function initPage() {
   const saveData = load(LOCALE_STORAGE_KEY);
-  //   if (value === null) {
-  //     alert('no');
-  //   }
 
   if (!saveData) {
     return;
@@ -40,6 +37,11 @@ const handleSubmit = event => {
   const {
     elements: { email, message },
   } = event.currentTarget;
+
+  if (email.value === '' || message.value === '') {
+    alert('Всі поля повинні бути заповненними!');
+    return;
+  }
 
   console.log({ email: email.value, message: message.value });
   event.currentTarget.reset();
